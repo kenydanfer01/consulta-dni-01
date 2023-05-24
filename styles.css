@@ -62,16 +62,16 @@ svg {
 }
 
 /* ========== */
-.text-slide {
-  animation: slideText 10s infinite linear;
-}
-
-@keyframes slideText {
-  0% {
-    transform: translateX(100%);
+/* Estilos para pantallas de 400x800 o menos */
+@media (max-width: 400px) and (max-height: 800px) {
+  .view-text {
+    margin: 200px 0px;
+    padding: 0px;
+    width: 100%;
   }
-  100% {
-    transform: translateX(-100%);
+
+  .span {
+    border-radius: 50%;
   }
 }
 
