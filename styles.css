@@ -1,4 +1,4 @@
-/* Main styles */
+/* Text styles */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
 .text {
   fill: none;
@@ -10,27 +10,27 @@
   animation: stroke 6s infinite linear;
 }
 .text:nth-child(5n + 1) {
-  stroke: #f2385a;
+  stroke: #ffd700;
   -webkit-animation-delay: -1.2s;
   animation-delay: -1.2s;
 }
 .text:nth-child(5n + 2) {
-  stroke: #f5a503;
+  stroke: #00bfff;
   -webkit-animation-delay: -2.4s;
   animation-delay: -2.4s;
 }
 .text:nth-child(5n + 3) {
-  stroke: #e9f1df;
+  stroke: #ff0000;
   -webkit-animation-delay: -3.6s;
   animation-delay: -3.6s;
 }
 .text:nth-child(5n + 4) {
-  stroke: #56d9cd;
+  stroke: #00ff00;
   -webkit-animation-delay: -4.8s;
   animation-delay: -4.8s;
 }
 .text:nth-child(5n + 5) {
-  stroke: #3aa1bf;
+  stroke: #ffc0cb;
   -webkit-animation-delay: -6s;
   animation-delay: -6s;
 }
@@ -48,13 +48,10 @@
 /* Other styles */
 
 .view-text {
-}
-
-.view-text {
   background: #000000;
   font: 4em/1 Open Sans, Impact;
   text-transform: uppercase;
-  margin: 0;
+  margin: 50px;
   padding: 0;
 }
 
@@ -65,3 +62,54 @@ svg {
 }
 
 /* ========== */
+.text-slide {
+  animation: slideText 10s infinite linear;
+}
+
+@keyframes slideText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* ===BUBBLES=== */
+.contenedor {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+}
+
+.bubbles {
+  position: relative;
+  display: flex;
+}
+
+.bubbles span {
+  z-index: 80;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #4fc3dc;
+  margin: 0 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+  background: #ff2d75;
+  box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(90vh) scale(0);
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+  }
+}

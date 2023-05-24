@@ -29,8 +29,10 @@ function traer() {
   fetch(proxyUrl + targetUrl)
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       if (data && data.nombres) {
         document.getElementById("recived").textContent = data.nombres;
+        document.getElementById("static").textContent = "ERES GENIAL!";
       } else {
         Swal.fire({
           icon: "info",
@@ -51,4 +53,6 @@ function traer() {
 boton.addEventListener("click", function (event) {
   event.preventDefault();
   traer();
+
+  playAudio();
 });
